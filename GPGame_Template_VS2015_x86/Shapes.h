@@ -11,8 +11,13 @@ using namespace std;
 class Shapes {
 
 public:
-	Shapes();
+	Shapes(glm::vec3 myPosition, float mass, float radius, float acceleration);
 	~Shapes();
+
+	glm::vec3 myPosition;
+	float mass;
+	float radius;
+	float acceleration;
 
 	void Load();
 	void Draw();

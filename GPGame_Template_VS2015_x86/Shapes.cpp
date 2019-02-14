@@ -6,14 +6,24 @@
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
-Shapes::Shapes() {
-
+Shapes::Shapes(glm::vec3 myPosition, float mass,float velocity, float radius, float acceleration)
+{
+	this.myPosition = myPosition;
+	this.mass = mass;
+	this.velocity = velocity;
+	this.radius = radius;
+	this.acceleration = acceleration;
 };
+Shapes::Shapes(glm::vec3 myPosition, float mass, float radius, float acceleration) {
+
+}
 
 Shapes::~Shapes() {
 
 }
-
+void Gravity() {
+	this.velocity = this.acceleration * this.mass;
+};
 void Shapes::LoadObj() {
 
 	std::vector< glm::vec3 > obj_vertices;

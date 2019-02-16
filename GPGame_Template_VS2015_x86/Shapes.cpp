@@ -23,6 +23,7 @@ Shapes::~Shapes() {
 }
 void Gravity() {
 	this.velocity = this.acceleration * this.mass;
+	float gravity = 9.81;
 };
 void Shapes::LoadObj() {
 

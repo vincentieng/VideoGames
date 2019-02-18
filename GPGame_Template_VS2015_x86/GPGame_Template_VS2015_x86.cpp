@@ -46,7 +46,9 @@ bool        keyStatus[1024];    // Hold key status.
 
 // MAIN GRAPHICS OBJECT
 Graphics    myGraphics;        // Runing all the graphics in this object
-
+// MY VARIABLE
+GLfloat	myBounceHeight = 0.5f;
+GLfloat mySpeed = 0.01f;
 // DEMO OBJECTS
 Cube        myCube;
 Sphere        mySphere;
@@ -210,17 +212,20 @@ void updateSceneElements() {
 	myCube.proj_matrix = myGraphics.proj_matrix;
     
     // calculate Sphere movement
-    glm::mat4 mv_matrix_sphere =
-    glm::translate(glm::vec3(-2.0f, 0.5f + t, 0.0f)) *
-    glm::rotate(-t, glm::vec3(0.0f, 1.0f, 0.0f)) *
-    glm::rotate(-t, glm::vec3(1.0f, 0.0f, 0.0f)) *
-    glm::mat4(1.0f);
+   glm::mat4 mv_matrix_sphere =
+		glm::translate(glm::vec3(-2.0f, myBounceHeight, 0.0f)) *
+		
+		glm::mat4(1.0f);
 	mySphere.mv_matrix = myGraphics.viewMatrix * mv_matrix_sphere;
 	mySphere.proj_matrix = myGraphics.proj_matrix;
-	if (t == 0.5) {
-		while (t != 0) {
-			t -= f; // increment movement variable
-		}
+	if (myBounceHeight < 0.5f ) {
+		mySpeed = -mySpeed;
+		myBounceHeight += mySpeed;
+
+	}
+	else {
+		mySpeed += -0.000001f;
+		myBounceHeight += mySpeed;
 	}
    
     

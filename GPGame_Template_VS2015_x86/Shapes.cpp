@@ -1029,8 +1029,8 @@ Particles(glm::vec3 myPosition, float mass, float velocity, float radius, float 
 Particles particles;
 void Initiation(int number_particles) {
 	for (int i = 0; i < number_particles; ++i) {
-		particles[i].position = (myPosition) { RAND_MAX(50), RAND_MAX(50), RAND_MAX(50) };
-		particles[i].velocity = (myPosition) { 0, 0 };
+		particles[i].position =  { RAND_MAX(50), RAND_MAX(50), RAND_MAX(50) };
+		particles[i].velocity =  { 0, 0 };
 		particles[i].mass = 1;
 	}
 }

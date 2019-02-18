@@ -1027,3 +1027,20 @@ f 6/9/4 2/14/4 1/10/4
 Line::~Line() {
 
 }
+Particles(glm::vec3 myPosition, float mass, float velocity, float radius, float acceleration)
+{
+	this.myPosition = myPosition;
+	this.mass = mass;
+	this.velocity = velocity;
+	this.radius = radius;
+	this.acceleration = acceleration;
+};
+
+Particles particles;
+void Initiation(int number_particles) {
+	for (int i = 0; i < number_particles; ++i) {
+		particles[i].position = (myPosition) { RAND_MAX(50), RAND_MAX(50), RAND_MAX(50) };
+		particles[i].velocity = (myPosition) { 0, 0 };
+		particles[i].mass = 1;
+	}
+}

@@ -72,3 +72,9 @@ public:
 	Line();
 	~Line();
 };
+class Particles : public Shapes {
+public:
+	Particles(glm::vec3 myPosition, float mass, float radius, float acceleration);
+	
+	~Particles();
+};
